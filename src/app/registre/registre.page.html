@@ -1,34 +1,52 @@
 <!DOCTYPE html>
 <ion-content>
+    <br>
     <div class="logo">
-        <ion-icon color="light" ame="person-add-outline "></ion-icon>
-    </div>
-    <div class="padding ">
-        <ion-item>
-            <ion-icon color="light "></ion-icon>
-            <ion-icon color="light "></ion-icon>
-            <ion-input class="writ " color="light " type="text " placeholder="Nom "></ion-input>
-        </ion-item>
 
+        <ion-icon color="light" name="person-add-outline"></ion-icon>
+    </div>
+    <div class="padding">
         <ion-item>
-            <ion-icon color="light "></ion-icon>
-            <ion-icon color="light "></ion-icon>
-            <ion-input class="writ " color="light " type="text " placeholder="Prenom "></ion-input>
+
+            <ion-input class="writ" color="light" type="text" placeholder="Nom"></ion-input>
         </ion-item>
+        <br>
         <ion-item>
-            <ion-icon color="light "></ion-icon>
-            <ion-icon color="light "></ion-icon>
-            <ion-input class="writ " color="light " type="mail " placeholder="Email "></ion-input>
+            <ion-input class="writ" color="light" type="text" placeholder="Prenom"></ion-input>
         </ion-item>
+        <br>
         <ion-item>
-            <ion-icon color="light "></ion-icon>
-            <ion-icon color="light "></ion-icon>
-            <ion-input class="writ " color="light " type="mail " placeholder="Mot de pass "></ion-input>
+
+            <ion-input class="writ" color="light" type="mail" placeholder="Adresse email"></ion-input>
         </ion-item>
+        <br>
+        <ion-item>
+            <ion-input class="writ" color="light" type="password" placeholder="Mot de passe"></ion-input>
+        </ion-item>
+        <br>
+
+        <label color="dark">Profession</label>
+        <br>
+        <ion-radio-group fill="outline" value="biff">
+
+
+            <ion-item>
+                <ion-label color="light">Client</ion-label>
+                <ion-radio slot="start" value="client"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+                <ion-label color="light">Professionnel</ion-label>
+                <ion-radio slot="start" value="professionnel"></ion-radio>
+            </ion-item>
+
+
+        </ion-radio-group>
 
     </div>
-    <ion-item lines="none ">
-        <ion-button color="light " slot="end " fill="clear ">Mot de passe oublié ?</ion-button>
-    </ion-item>
-    <ion-button color="light " expand="block " shape="round " fill="outline ">Connexion</ion-button>
+
+    <br>
+    <ion-button color="tertiary" expand="block" shape="round">Inscription</ion-button>
+
+
 </ion-content>
