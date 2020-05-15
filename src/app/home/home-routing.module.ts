@@ -4,8 +4,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomePage } from './home.page';
 
 const routes: Routes = [
-  {
-    path: 'tabs',
+  
+  
+  {  
+    path: '',
     component: HomePage,
     children: [
       {
@@ -37,7 +39,7 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/tabs/news',
+        redirectTo: 'news',
         pathMatch: 'full'
       }
     ]
@@ -45,7 +47,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/tabs/news',
+    redirectTo: 'news',
     pathMatch: 'full'
   }
 ];
