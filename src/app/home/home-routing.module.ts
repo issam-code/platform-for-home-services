@@ -1,8 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AboutPage } from '../about/about.page';
-import { ContactPage } from '../contact/contact.page';
-import { NewsPage } from '../news/news.page';
 
 import { HomePage } from './home.page';
 
@@ -13,27 +10,44 @@ const routes: Routes = [
     children: [
       {
         path: 'news',
-        outlet: 'news',
-        component: NewsPage
+      children: [
+        {
+          path: '',
+          loadChildren: () => import('../news/news.module').then(m => m.NewsPageModule)
+        }
+          ]
       },
       {
         path: 'about',
-        outlet: 'about',
-        component: AboutPage
+      children: [
+        {
+          path: '',
+          loadChildren: () => import('../about/about.module').then(m => m.AboutPageModule)
+        }
+          ]
       },
       {
         path: 'contact',
-        outlet: 'contact',
-        component: ContactPage
+      children: [
+        {
+          path: '',
+          loadChildren: () => import('../contact/contact.module').then(m => m.ContactPageModule)
+        }
+          ]
+      },
+      {
+        path: '',
+        redirectTo: '/tabs/news',
+        pathMatch: 'full'
       }
     ]
-  },
 
-{
-  path: '',
-  redirectTo: '/home/(news:news)',
-  pathMatch: 'full'
-}
+  },
+  {
+    path: '',
+    redirectTo: '/tabs/news',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({
