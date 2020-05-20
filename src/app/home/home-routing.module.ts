@@ -18,20 +18,20 @@ const routes: Routes = [
           ]
       },
       {
-        path: 'about',
+        path: 'discussion',
       children: [
         {
           path: '',
-          loadChildren: () => import('../about/about.module').then(m => m.AboutPageModule)
+          loadChildren: () => import('../discussion/discussion.module').then(m => m.DiscussionPageModule)
         }
           ]
       },
       {
-        path: 'contact',
+        path: 'profil',
       children: [
         {
           path: '',
-          loadChildren: () => import('../contact/contact.module').then(m => m.ContactPageModule)
+          loadChildren: () => import('../profil/profil.module').then(m => m.ProfilPageModule)
         }
           ]
       },

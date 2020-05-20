@@ -24,13 +24,19 @@ const routes: Routes = [
     loadChildren: () => import('./news/news.module').then( m => m.NewsPageModule)
   },
   {
-    path: 'about',
-    loadChildren: () => import('./about/about.module').then( m => m.AboutPageModule)
+    path: 'profil',
+    loadChildren: () => import('./profil/profil.module').then( m => m.ProfilPageModule)
   },
   {
-    path: 'contact',
-    loadChildren: () => import('./contact/contact.module').then( m => m.ContactPageModule)
+    path: 'discussion',
+    loadChildren: () => import('./discussion/discussion.module').then( m => m.DiscussionPageModule)
+  },  {
+    path: 'conversation',
+    loadChildren: () => import('./conversation/conversation.module').then( m => m.ConversationPageModule)
   }
+
+
+
   
 
 ];
