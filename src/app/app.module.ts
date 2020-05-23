@@ -12,6 +12,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+
 export const firebaseConfig = {
   apiKey: "AIzaSyBksKkjBlB4FjjWm9UgxzLakgyQX8TGMno",
   authDomain: "myfirstapp-7612e.firebaseapp.com",
@@ -37,6 +38,7 @@ export const firebaseConfig = {
   providers: [
     StatusBar,
     SplashScreen,
+   
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
