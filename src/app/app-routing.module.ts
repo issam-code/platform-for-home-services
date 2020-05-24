@@ -34,7 +34,12 @@ const routes: Routes = [
   {
     path: 'conversation',
     loadChildren: () => import('./conversation/conversation.module').then( m => m.ConversationPageModule)
+  },
+  {
+    path: 'poster',
+    loadChildren: () => import('./poster/poster.module').then( m => m.PosterPageModule)
   }
+
 
 
 

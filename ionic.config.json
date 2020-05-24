@@ -1,8 +1,7 @@
 {
-  "name": "myFirstApp",
+  "name": "myProjet_SFE",
   "integrations": {
-    "capacitor": {},
-    "cordova": {}
+    "capacitor": {}
   },
   "type": "angular"
 }

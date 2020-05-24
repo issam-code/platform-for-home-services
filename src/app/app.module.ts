@@ -8,11 +8,6 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
-import { AngularFireAuthModule } from '@angular/fire/auth';
-import { AngularFireStorageModule } from '@angular/fire/storage';
-
 export const firebaseConfig = {
   apiKey: "AIzaSyBksKkjBlB4FjjWm9UgxzLakgyQX8TGMno",
   authDomain: "myfirstapp-7612e.firebaseapp.com",
@@ -30,10 +25,7 @@ export const firebaseConfig = {
     BrowserModule,
     IonicModule.forRoot(), 
     AppRoutingModule,
-    AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule,
-    AngularFireAuthModule,
-    AngularFireStorageModule
+   
   ],
   providers: [
     StatusBar,
