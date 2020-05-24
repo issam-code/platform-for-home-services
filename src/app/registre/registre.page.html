@@ -17,27 +17,27 @@
         <br>
         <ion-item>
 
-            <ion-input class="writ" color="light" type="mail" placeholder="Adresse email"></ion-input>
+            <ion-input [(ngModel)]="user.mail" class=" writ " color="light " type="mail " placeholder="Adresse email "></ion-input>
         </ion-item>
         <br>
         <ion-item>
-            <ion-input class="writ" color="light" type="password" placeholder="Mot de passe"></ion-input>
+            <ion-input [(ngModel)]="user.password" class="writ " color="light " type="password" placeholder="Mot de passe "></ion-input>
         </ion-item>
         <br>
 
-        <label color="dark">Profession</label>
+        <label color="dark ">Profession</label>
         <br>
-        <ion-radio-group fill="outline" value="biff">
+        <ion-radio-group fill="outline " value="biff ">
 
 
             <ion-item>
-                <ion-label color="light">Client</ion-label>
-                <ion-radio slot="start" value="client"></ion-radio>
+                <ion-label color="light ">Client</ion-label>
+                <ion-radio slot="start " value="client "></ion-radio>
             </ion-item>
 
             <ion-item>
-                <ion-label color="light">Professionnel</ion-label>
-                <ion-radio slot="start" value="professionnel"></ion-radio>
+                <ion-label color="light ">Professionnel</ion-label>
+                <ion-radio slot="start " value="professionnel "></ion-radio>
             </ion-item>
 
 
@@ -46,7 +46,7 @@
     </div>
 
     <br>
-    <ion-button color="tertiary" expand="block" shape="round">Inscription</ion-button>
+    <ion-button (click)="register(user) " color="tertiary " expand="block " shape="round ">Inscription</ion-button>
 
 
 </ion-content>

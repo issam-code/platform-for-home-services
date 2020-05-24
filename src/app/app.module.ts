@@ -8,15 +8,9 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-export const firebaseConfig = {
-  apiKey: "AIzaSyBksKkjBlB4FjjWm9UgxzLakgyQX8TGMno",
-  authDomain: "myfirstapp-7612e.firebaseapp.com",
-  databaseURL: "https://myfirstapp-7612e.firebaseio.com",
-  projectId: "myfirstapp-7612e",
-  storageBucket: "myfirstapp-7612e.appspot.com",
-  messagingSenderId: "923051912653",
-  appId: "1:923051912653:web:1d33963040e8ed76d5a884",
-};
+import firebaseConfig from './firebase';
+import {AngularFireModule} from 'angularfire2'
+import {AngularFireAuthModule} from 'angularfire2/auth'
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,7 +19,8 @@ export const firebaseConfig = {
     BrowserModule,
     IonicModule.forRoot(), 
     AppRoutingModule,
-   
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule
   ],
   providers: [
     StatusBar,
