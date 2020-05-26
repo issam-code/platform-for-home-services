@@ -7,7 +7,7 @@
         <ion-item>
             <ion-icon color="light" name="person-circle-outline"></ion-icon>
             <ion-icon color="light"></ion-icon>
-            <ion-input class="writ" color="light" type="text" [(ngModel)]="user.mail" placeholder="Username"></ion-input>
+            <ion-input class="writ" color="light" type="email" [(ngModel)]="user.mail" placeholder="Email"></ion-input>
         </ion-item>
 
         <ion-item>
@@ -19,9 +19,9 @@
     <ion-item lines="none">
         <ion-button color="light" slot="end" fill="clear">Mot de passe oublié ?</ion-button>
     </ion-item>
-    <ion-button color="light" expand="block" shape="round" fill="outline" (click)="login(user)">Connexion</ion-button>
+    <ion-button color="light" expand="block" shape="round" fill="outline" (click)="login(user)">Login</ion-button>
     <br>
-    <ion-button href="registre" olor="tertiary" expand="block" shape="round">Inscription</ion-button>
+    <ion-button href="registre" olor="tertiary" expand="block" shape="round">Registre</ion-button>
     <ion-item lines="none">
         <!-- <ion-icon color="light"></ion-icon>
         <ion-icon color="light"></ion-icon>

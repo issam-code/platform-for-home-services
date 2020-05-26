@@ -5,7 +5,7 @@ import { RouteReuseStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-
+import {AngularFireDatabaseModule} from 'angularfire2/database'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import firebaseConfig from './firebase';
@@ -20,7 +20,8 @@ import {AngularFireAuthModule} from 'angularfire2/auth'
     IonicModule.forRoot(), 
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFireDatabaseModule
   ],
   providers: [
     StatusBar,

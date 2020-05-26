@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <ion-content>
+
     <br>
     <div class="logo">
 
@@ -7,12 +8,15 @@
     </div>
     <div class="padding">
         <ion-item>
-
-            <ion-input class="writ" color="light" type="text" placeholder="Nom"></ion-input>
+            <ion-input [(ngModel)]="profil.nom" class="writ" color="light" type="text" placeholder="Nom"></ion-input>
         </ion-item>
         <br>
         <ion-item>
-            <ion-input class="writ" color="light" type="text" placeholder="Prenom"></ion-input>
+            <ion-input [(ngModel)]="profil.prenom" class="writ" color="light" type="text" placeholder="Prenom"></ion-input>
+        </ion-item>
+        <br>
+        <ion-item>
+            <ion-input [(ngModel)]="profil.username" class="writ" color="light" type="text" placeholder="Username"></ion-input>
         </ion-item>
         <br>
         <ion-item>
@@ -23,29 +27,28 @@
         <ion-item>
             <ion-input [(ngModel)]="user.password" class="writ " color="light " type="password" placeholder="Mot de passe "></ion-input>
         </ion-item>
-        <br>
 
-        <label color="dark ">Profession</label>
-        <br>
-        <ion-radio-group fill="outline " value="biff ">
-
-
+        <ion-radio-group fill="outline " [(ngModel)]="profil.profession">
+            <ion-list-header>
+                <ion-label>Profession</ion-label>
+            </ion-list-header>
             <ion-item>
                 <ion-label color="light ">Client</ion-label>
-                <ion-radio slot="start " value="client "></ion-radio>
+                <ion-radio slot="start" color="success" value="Client"></ion-radio>
             </ion-item>
-
             <ion-item>
                 <ion-label color="light ">Professionnel</ion-label>
-                <ion-radio slot="start " value="professionnel "></ion-radio>
+                <ion-radio slot="start" color="success" value="professionnel"></ion-radio>
             </ion-item>
+
+
 
 
         </ion-radio-group>
 
     </div>
 
-    <br>
+
     <ion-button (click)="register(user) " color="tertiary " expand="block " shape="round ">Inscription</ion-button>
 
 
