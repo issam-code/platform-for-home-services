@@ -1,0 +1,25 @@
+<!DOCTYPE html >
+<ion-header>
+    <ion-toolbar>
+        <ion-title size="large">News </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-list>
+        <ion-item-sliding *ngFor="let item of post | async json">
+
+
+            <ion-card (click)="NewsSinglePage(item)">
+                <div></div>
+
+                <img class="img-nw" src="../../assets/mch.jpg" />
+                <ion-card-content>
+                    <ion-card-title>{{item.product}}</ion-card-title>
+
+                    <p>{{item.description}}</p>
+                </ion-card-content>
+            </ion-card>
+        </ion-item-sliding>
+    </ion-list>
+
+</ion-content>

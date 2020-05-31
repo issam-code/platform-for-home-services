@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{post.userid}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-img src="../../assets/mch.jpg"></ion-img>
+
+        <ion-card-content>
+            <ion-card-title>{{post.product}} {{post.model}} {{post.category}}</ion-card-title>
+
+            <p>{{post.description}}</p>
+        </ion-card-content>
+    </ion-card>
+
+
+</ion-content>

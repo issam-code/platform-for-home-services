@@ -1,6 +1,7 @@
 export interface Profil{
+    id?:any;
     nom:string;
-    prenom:string;
+    date_naissance:string;
     username:string;
     profession:string;
 }

@@ -38,7 +38,23 @@ const routes: Routes = [
   {
     path: 'poster',
     loadChildren: () => import('./poster/poster.module').then( m => m.PosterPageModule)
+  },  {
+    path: 'news-single',
+    loadChildren: () => import('./news-single/news-single.module').then( m => m.NewsSinglePageModule)
+  },
+  {
+    path: 'homepr',
+    loadChildren: () => import('./homepr/homepr.module').then( m => m.HomeprPageModule)
+  },
+  {
+    path: 'newspr',
+    loadChildren: () => import('./newspr/newspr.module').then( m => m.NewsprPageModule)
+  },
+  {
+    path: 'sigle-newspr',
+    loadChildren: () => import('./sigle-newspr/sigle-newspr.module').then( m => m.SigleNewsprPageModule)
   }
+
 
 
 

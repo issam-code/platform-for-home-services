@@ -1,7 +1,8 @@
 {
   "name": "myProjet_SFE",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }
