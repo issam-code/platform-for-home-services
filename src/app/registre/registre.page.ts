@@ -32,17 +32,7 @@ export class RegistrePage implements OnInit {
 
   ngOnInit() {
   };
-  SelectDate(){
-    var options={
-      date:new Date(),
-      mode:'date',
-      androidTheme:this.datePicker.ANDROID_THEMES.THEME_TRADITIONAL
-
-    }
-    this.datePicker.show(options).then((date)=>{
-      this.selectdate=this.datePipe.transform(date,"dd-MM-yyyy");
-    })
-  }
+ 
   async register(user: user) {
     try{
     const result = await this.ofAuth.auth.createUserWithEmailAndPassword(user.mail,user.password)
