@@ -26,7 +26,7 @@ export class LoginPage implements OnInit {
           const res = await this.afAuth.auth.signInWithEmailAndPassword(user.mail,user.password)
           if(res){
             
-            this.navCtrl.navigateForward('home');
+            this.navCtrl.navigateForward('phm');
             
           }
         }catch(err){

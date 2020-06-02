@@ -4,23 +4,26 @@
         <ion-buttons slot="start">
             <ion-back-button></ion-back-button>
         </ion-buttons>
-        <ion-title>{{post.userid}}</ion-title>
+        <ion-title>{{post.product}} {{post.model}} {{post.category}}</ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
     <ion-card>
-        <ion-img src="../../assets/mch.jpg"></ion-img>
+        <ion-img src={{post.image}}></ion-img>
 
         <ion-card-content>
-            <ion-card-title>{{post.product}} {{post.model}} {{post.category}}</ion-card-title>
 
             <p>{{post.description}}</p>
         </ion-card-content>
     </ion-card>
-    <div class="stream">
-        <ion-item lines="none" *ngFor="let message of messages">
-            <ion-badge text-wrap slot="start" color="light">{{ message.text }}</ion-badge>
+    <div class="stream" *ngFor="let messg of msg | async json">
+        <ion-item lines="none">
+            <ion-badge slot="start" color="light" text-wrap>{{ messg.text }}</ion-badge>
+            <div slot="end" class="prix">
+                <p> {{messg.prix}} DH</p>
+            </div>
+
         </ion-item>
     </div>
 
@@ -29,11 +32,12 @@
     <ion-grid>
         <ion-row>
             <ion-col size="10" class="input-col">
-                <ion-input autocomplete="true" spellcheck="true" [(ngModel)]="messageText" type="text" placeholder="Entrez votre message" name="message"></ion-input>
+                <ion-input autocomplete="true" spellcheck="true" [(ngModel)]="message.text" type="text" placeholder="Get product" name=" message "></ion-input>
+                <ion-input autocomplete="true" spellcheck="true" [(ngModel)]="message.prix" type="text" placeholder="Set prix en DH" name=" prix "></ion-input>
             </ion-col>
-            <ion-col size="2" class="send-col">
-                <ion-button shape="full" (click)="sendMessage()">
-                    <ion-icon name="paper-plane"></ion-icon>
+            <ion-col size="2 " class="send-col ">
+                <ion-button shape="full " (click)="addcomment() ">
+                    <ion-icon name="send-outline"></ion-icon>
                 </ion-button>
             </ion-col>
         </ion-row>

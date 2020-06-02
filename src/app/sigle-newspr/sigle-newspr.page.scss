@@ -28,10 +28,17 @@ ion-grid {
 .stream ion-item {
     min-height: fit-content !important;
     height: 51px;
+    padding: 1px 5px 5px 5px;
 }
 
 ion-badge {
     padding: 10px!important;
     text-align: left;
-    max-width: 80%;
+    max-width: 70%;
+    white-space: pre-wrap;
+    margin-right: 0px;
+}
+
+.prix {
+    margin-left: 0px;
 }

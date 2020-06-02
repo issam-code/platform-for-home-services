@@ -1,0 +1,44 @@
+ion-grid {
+    padding: 0px!important;
+    border-top: solid 1px #d2cdcd;
+}
+
+.input-col {
+    padding-left: 10px;
+}
+
+.send-col {
+    padding: 0px!important;
+}
+
+.send-col ion-button {
+    height: 100%!important;
+    margin: 0px!important;
+    border-radius: 0px !important;
+}
+
+.send-col button {
+    border-radius: 0px !important;
+}
+
+.send-col ion-icon {
+    font-size: 20px!important;
+}
+
+.stream ion-item {
+    min-height: fit-content !important;
+    height: 51px;
+    padding: 1px 5px 5px 5px;
+}
+
+ion-badge {
+    padding: 10px!important;
+    text-align: left;
+    max-width: 70%;
+    white-space: pre-wrap;
+    margin-right: 0px;
+}
+
+.prix {
+    margin-left: 0px;
+}

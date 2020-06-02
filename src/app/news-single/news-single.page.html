@@ -4,20 +4,27 @@
         <ion-buttons slot="start">
             <ion-back-button></ion-back-button>
         </ion-buttons>
-        <ion-title>{{post.userid}}</ion-title>
+        <ion-title>{{post.product}} {{post.model}} {{post.category}}</ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
     <ion-card>
-        <ion-img src="../../assets/mch.jpg"></ion-img>
+        <ion-img src={{post.image}}></ion-img>
 
         <ion-card-content>
-            <ion-card-title>{{post.product}} {{post.model}} {{post.category}}</ion-card-title>
 
             <p>{{post.description}}</p>
         </ion-card-content>
     </ion-card>
+    <div class="stream" *ngFor="let messg of msg | async json">
+        <ion-item lines="none">
+            <ion-badge slot="start" color="light" text-wrap>{{ messg.text }}</ion-badge>
+            <div slot="end" class="prix">
+                <p> {{messg.prix}} DH</p>
+            </div>
 
+        </ion-item>
+    </div>
 
 </ion-content>

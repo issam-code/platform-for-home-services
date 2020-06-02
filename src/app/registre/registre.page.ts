@@ -8,6 +8,7 @@ import { take } from 'rxjs/operators';
 import { DatePicker } from '@ionic-native/date-picker/ngx';
 import { DatePipe } from '@angular/common';
 import { Platform } from '@ionic/angular';
+import { ImagePicker,ImagePickerOptions } from '@ionic-native/image-picker/ngx';
 
 @Component({
   selector: 'app-registre',
@@ -15,12 +16,13 @@ import { Platform } from '@ionic/angular';
   styleUrls: ['./registre.page.scss'],
 })
 export class RegistrePage implements OnInit {
+  images:any=[];
   user={} as user;
   profil={} as Profil;
   selectdate:string="";
   constructor(private ofAuth:AngularFireAuth,
     public navCtrl: NavController,private afdatabase:AngularFireDatabase
-    ,private datePicker: DatePicker,private datePipe: DatePipe,public platform:Platform) {
+    ,public imagepk:ImagePicker,private datePicker: DatePicker,private datePipe: DatePipe,public platform:Platform) {
       this.platform.ready().then(()=>{
         this.selectdate=this.datePipe.transform(new Date(),"dd-MM-yyyy");
       }
@@ -45,6 +47,7 @@ export class RegistrePage implements OnInit {
     try{
     const result = await this.ofAuth.auth.createUserWithEmailAndPassword(user.mail,user.password)
     if(result){
+      this.profil.mail=this.user.mail;
       this.createProfil()
     }
 }catch(err){
@@ -53,12 +56,32 @@ export class RegistrePage implements OnInit {
 }
 createProfil(){
   this.ofAuth.authState.take(1).subscribe(auth =>{
-   
+    this.profil.image="";
     this.afdatabase.object(`profile/${auth.uid}`).set(this.profil)
     .then(()=> console.log("registre success"));
-    this.navCtrl.navigateForward('home');
+    this.navCtrl.navigateForward('login');
     
   })
+}
+pickmultipleimg(){
+  var option:ImagePickerOptions={
+maximumImagesCount:5,
+width:100,
+height:100
+
+  }
+  this.imagepk.getPictures(option).then((result)=>{
+   
+      let filename=result.substring(result.
+        lastIndexOf('/')+1);
+        let path=result.substring(0,result.
+          lastIndexOf('/')+1)
+      /*  this.file.readAsDataURL(path,filename).then((base64string)=>{
+          this.images.push(base64string);
+        })*/
+    
+  }
+  )
 }
 
 

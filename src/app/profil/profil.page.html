@@ -1,41 +1,50 @@
 <!DOCTYPE html>
 <ion-content>
-    <div class="header">
-        <h2>{{ profilee.nom }} </h2>
-        <h5>{{ profilee.username }}</h5>
 
+    <div class="header">
+        <h2>{{profilee.mail}}</h2>
+
+        <div class="space-between ">
+            <div class="nom ">
+
+                <p>{{profilee.nom}}</p>
+            </div>
+            <div class="usname ">
+
+                <p>{{profilee.username}}</p>
+            </div>
+        </div>
     </div>
-    <div class="flex">
-        <div class="border-bleu">
-            <div class="border-wight">
-                <div class="img-box">
-                    <img src="../../assets/icon/me.jpeg">
+
+    <div class="flex ">
+        <div class="border-bleu ">
+            <div class="border-wight ">
+                <div class="img-box ">
+                    <ion-img src={{profilee.image}}></ion-img>
                 </div>
             </div>
         </div>
     </div>
-    <ion-card>
-        <ion-item lines="none">
-            <ion-avatar slot="start">
-                <img src="../../assets/icon/me.jpeg" />
-            </ion-avatar>
-            <ion-label>
-                <h2><b>{{ profilee.nom }} </b></h2>
-                <p>Il y a 14 heures</p>
-            </ion-label>
+    <div class="padding ">
+        <ion-item>
+            <ion-input [(ngModel)]="profil.nom " class="writ " type="text " placeholder="edit Nom "></ion-input>
         </ion-item>
-        <ion-item lines="none" class="tweet">
-            <ion-label text-wrap>my TV won’t turn on!!<br/><br/>Samsung 32″ HD UA32N5003AKXMV - LED TV – Noir
-            </ion-label>
+        <br>
+        <ion-item>
+            <ion-input [(ngModel)]="profil.username " class="writ " type="text " placeholder="edit Username "></ion-input>
         </ion-item>
-        <img class="tweet-img" src="https://ma.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/87/919302/1.jpg?8217" />
+        <br>
+        <ion-item>
 
-        <ion-button size="small" fill="clear">
-            <ion-icon slot="start" name="chatbubble-ellipses"></ion-icon>34
-        </ion-button>
-
-    </ion-card>
-
+            <ion-input [(ngModel)]="profil.mail " class=" writ " type="mail " placeholder="edit Adresse email "></ion-input>
+        </ion-item>
+        <br>
 
 
+    </div>
+    <ion-button expand="block " (click)="updateprofile()">Edit Profile</ion-button>
+    <ion-button color="dark" style="padding: 3px 122px 10px;" (click)=" SignOut()">
+        <ion-icon name="log-out"></ion-icon>
+        <ion-label color="light">log out</ion-label>
+    </ion-button>
 </ion-content>

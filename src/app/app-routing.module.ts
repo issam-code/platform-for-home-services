@@ -53,6 +53,10 @@ const routes: Routes = [
   {
     path: 'sigle-newspr',
     loadChildren: () => import('./sigle-newspr/sigle-newspr.module').then( m => m.SigleNewsprPageModule)
+  },
+  {
+    path: 'phm',
+    loadChildren: () => import('./phm/phm.module').then( m => m.PhmPageModule)
   }
 
 

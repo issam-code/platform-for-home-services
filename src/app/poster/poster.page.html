@@ -7,13 +7,9 @@
     </div>
     <br/>
     <br/>
-    <div class="padding">
-        <div class="flex">
-            <div class="img-box">
-                <img [src]="image">
-            </div>
-        </div>
-        <ion-button (click)="takePhoto()" color="tertiary" expand="block">take</ion-button>
+    <div>
+        <ion-button (click)="pickmultipleimg()" color="tertiary" expand="block">take</ion-button>
+
         <ion-item>
             <ion-label position="floating">Product</ion-label>
             <ion-input [(ngModel)]="post.product"></ion-input>
