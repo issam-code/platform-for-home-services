@@ -6,7 +6,10 @@ import { Injectable } from '@angular/core';
 export class DataService {
 private data:any;
 public post:any;
-private 
+public username:any;
+public userid:any;
+public id:any;
+public info:any;
   constructor() { }
   setData(data){
     this.data=  data;

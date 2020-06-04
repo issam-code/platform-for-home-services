@@ -23,14 +23,12 @@ export class RegistrePage implements OnInit {
   constructor(private ofAuth:AngularFireAuth,
     public navCtrl: NavController,private afdatabase:AngularFireDatabase
     ,public imagepk:ImagePicker,private datePicker: DatePicker,private datePipe: DatePipe,public platform:Platform) {
-      this.platform.ready().then(()=>{
-        this.selectdate=this.datePipe.transform(new Date(),"dd-MM-yyyy");
-      }
+     
       
-      )
      }
 
   ngOnInit() {
+    
   };
  
   async register(user: user) {

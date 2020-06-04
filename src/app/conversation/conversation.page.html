@@ -4,45 +4,28 @@
         <ion-buttons slot="start">
             <ion-back-button></ion-back-button>
         </ion-buttons>
-        <ion-title>younes <br>
-            <div class="status">En ligne</div>
-        </ion-title>
-        <ion-avatar slot="end">
-            <img src="../../assets/younes.jpg">
+        <ion-avatar slot="start">
+            <img src={{info.image}}>
         </ion-avatar>
+        <ion-title>{{info.username}} <br>
+        </ion-title>
+
     </ion-toolbar>
 
 </ion-header>
 <ion-content>
-    <div class="bg">
-
-        <ion-item lines="none">
-            <ion-badge color="secondary" slot="end">Hey youness comment ça va ?!
-                <ion-note color="medium">21:16
-                    <ion-icon name="done-all"></ion-icon>
-                </ion-note>
-            </ion-badge>
-        </ion-item>
-
-        <ion-item lines="none">
-            <ion-badge color="light" slot="start">Plutôt bien merci
-                <ion-note color="medium">21:17</ion-note>
-            </ion-badge>
-        </ion-item>
-        <ion-item lines="none">
-            <ion-badge color="secondary" slot="end">so
-                <ion-note color="medium">21:19
-                    <ion-icon name="done-all"></ion-icon>
-                </ion-note>
-            </ion-badge>
+    <div class="stream">
+        <ion-item lines="none" *ngFor="let msag of msg | async json">
+            <ion-badge text-wrap slot="start" color="light" *ngIf="msag.userId != userId">{{ msag.text }}</ion-badge>
+            <ion-badge text-wrap slot="end" color="primary" *ngIf="msag.userId == userId">{{ msag.text }}</ion-badge>
         </ion-item>
     </div>
 </ion-content>
 <ion-footer>
     <ion-toolbar>
-        <ion-input placeholder="Votre message"></ion-input>
+        <ion-input [(ngModel)]="message.text" placeholder="Votre message"></ion-input>
         <ion-buttons slot="end">
-            <ion-button>
+            <ion-button (click)="sendMessage()">
                 Envoyer
             </ion-button>
         </ion-buttons>

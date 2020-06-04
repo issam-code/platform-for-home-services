@@ -17,9 +17,9 @@
             <p>{{post.description}}</p>
         </ion-card-content>
     </ion-card>
-    <div class="stream" *ngFor="let messg of msg | async json">
+    <div class="stream" *ngFor="let messg of cmnt | async json">
         <ion-item lines="none">
-            <ion-badge slot="start" color="light" text-wrap>{{ messg.text }}</ion-badge>
+            <ion-badge slot="start" color="light" text-wrap><mark>{{ messg.username }}</mark> {{ messg.text }}</ion-badge>
             <div slot="end" class="prix">
                 <p> {{messg.prix}} DH</p>
             </div>
@@ -32,8 +32,8 @@
     <ion-grid>
         <ion-row>
             <ion-col size="10" class="input-col">
-                <ion-input autocomplete="true" spellcheck="true" [(ngModel)]="message.text" type="text" placeholder="Get product" name=" message "></ion-input>
-                <ion-input autocomplete="true" spellcheck="true" [(ngModel)]="message.prix" type="text" placeholder="Set prix en DH" name=" prix "></ion-input>
+                <ion-input autocomplete="true" spellcheck="true" [(ngModel)]="comment.text" type="text" placeholder="Get product" name=" message "></ion-input>
+                <ion-input autocomplete="true" spellcheck="true" [(ngModel)]="comment.prix" type="text" placeholder="Set prix en DH" name=" prix "></ion-input>
             </ion-col>
             <ion-col size="2 " class="send-col ">
                 <ion-button shape="full " (click)="addcomment() ">

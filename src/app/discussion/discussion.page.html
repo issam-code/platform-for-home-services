@@ -8,48 +8,18 @@
     </ion-toolbar>
 </ion-header>
 <ion-content>
-    <ion-item routerLink="/conversation">
+    <ion-item routerLink="/conversation" *ngFor="let msag of info | async json">
         <ion-avatar slot="start">
-            <img src="../../assets/abdo.jpg">
+            <img src={{msag.image}}>
         </ion-avatar>
-        <ion-label>
+        <ion-label (click)="gotochat(msag)">
             <div class="flex_box">
-                <h3>abdo</h3>
-                <ion-note slot="end">12:54</ion-note>
+                <h3>{{msag.username}}</h3>
             </div>
-            <p>
-                how are you ?</p>
-        </ion-label>
-    </ion-item>
-
-    <ion-item details routerLink="/conversation">
-        <ion-avatar slot="start">
-            <img src="../../assets/abod.jpg">
-        </ion-avatar>
-        <ion-label>
-            <div class="flex_box">
-                <h3>Aissam</h3>
-                <ion-note slot="end">22:54</ion-note>
-            </div>
-            <p>
-                <ion-icon class="text-icon" name="checkmark-done-outline"></ion-icon> Listen, I've had a pretty messed up day...</p>
         </ion-label>
     </ion-item>
 
 
-    <ion-item details routerLink="/conversation">
-        <ion-avatar slot="start">
-            <img src="../../assets/younes.jpg">
-        </ion-avatar>
-        <ion-label>
-            <div class="flex_box">
-                <h3>Youneszs</h3>
-                <ion-note slot="end">00:54</ion-note>
-            </div>
-            <p>
-                <ion-icon class="text-icon" color="primary" name="checkmark-done-outline"></ion-icon> so...</p>
-        </ion-label>
-    </ion-item>
 
 
 </ion-content>

@@ -47,7 +47,11 @@ export class ProfilPage implements OnInit {
     this.afAuth.authState.take(1).subscribe(auth =>{
    
       this.db.object(`profile/${auth.uid}`).update(this.profil)
-      .then(()=> console.log("update success"));
+      .then(()=> console.log("update success")).then();{
+        this.profil.nom=''
+        this.profil.mail=''
+        this.profil.username=''
+      };
       
       
     });

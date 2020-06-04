@@ -17,9 +17,10 @@
             <p>{{post.description}}</p>
         </ion-card-content>
     </ion-card>
-    <div class="stream" *ngFor="let messg of msg | async json">
+    <div class="stream" *ngFor="let messg of cmnt | async json">
         <ion-item lines="none">
-            <ion-badge slot="start" color="light" text-wrap>{{ messg.text }}</ion-badge>
+            <ion-badge slot="start" color="light" text-wrap>
+                <mark (click)="gochat(messg)">{{ messg.username }}</mark> {{ messg.text }}</ion-badge>
             <div slot="end" class="prix">
                 <p> {{messg.prix}} DH</p>
             </div>

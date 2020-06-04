@@ -25,13 +25,13 @@ export class NewsprPage implements OnInit {
   async ngOnInit() {
     this.itemsRef =  this.db.list('post/')
   this.post = this.itemsRef.valueChanges() ;
-   
+  this.profilee=await this.getdata();
+   console.log(this.profilee.username)
   }
   
   async getdata(): Promise<any> {
     const pr = await this.db.object("profile/"+this.dataservice.getData())
       .valueChanges().pipe(first()).toPromise();
-     
       console.log(pr);
     return pr;
   }
